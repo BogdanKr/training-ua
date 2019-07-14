@@ -1,4 +1,5 @@
-import com.courses.task2.Model;
+package com.courses.task2;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
