@@ -17,7 +17,7 @@ public class View {
         System.out.println(message);
     }
 
-    public String concatenatioMessage (String... message){
+    public String concatenationMessage (String... message){
         StringBuilder concat = new StringBuilder();
         for (String msg : message){
             concat = concat.append(msg);
@@ -25,15 +25,15 @@ public class View {
         return new String(concat);
     }
 
-    public void printStringMessage (String message){
-        printMessage( concatenatioMessage(
+    public void printConcatMessage (String message){
+        printMessage( concatenationMessage(
                 bundle.getString(INPUT_STRING_DATA),
                 bundle.getString(message)
         ));
     }
 
     public void printWrongInput (String message){
-        printMessage( concatenatioMessage(
+        printMessage( concatenationMessage(
                 bundle.getString(WRONG_INPUT),
                 bundle.getString(INPUT_STRING_DATA),
                 bundle.getString(message)
