@@ -24,8 +24,8 @@ public class InputNoteBook {
     public void inputNote() {
         RegexController regexController = new RegexController(scanner, view);
         String regexName =
-                (String.valueOf(View.bundle.getLocale()).equals("en"))
-                        ? REGEX_NAME_LAT : REGEX_NAME_UA;
+                (String.valueOf(View.bundle.getLocale()).equals("ua"))
+                        ? REGEX_NAME_UA : REGEX_NAME_LAT;
 
         this.firstName = regexController.inputValueWithRegexController(FIRST_NAME, regexName);
         this.login = regexController.inputValueWithRegexController(LOGIN_DATA, REGEX_LOGIN);

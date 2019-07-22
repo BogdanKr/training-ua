@@ -7,11 +7,11 @@ import static com.courses.task3.view.TextConstant.INPUT_STRING_DATA;
 import static com.courses.task3.view.TextConstant.WRONG_INPUT;
 
 public class View {
-    static String MESSAGE_BUNDLE_NAME = "messages";
+    private static String MESSAGE_BUNDLE_NAME = "messages";
     public static final ResourceBundle bundle =
             ResourceBundle.getBundle(MESSAGE_BUNDLE_NAME,
-                    //new Locale("en"));
-                    new Locale("ua", "UA"));
+                    new Locale("en","GB"));
+                    //new Locale("ua", "UA"));
 
     public void printMessage (String message){
         System.out.println(message);
