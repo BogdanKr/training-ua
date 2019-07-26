@@ -15,6 +15,7 @@ public class InputNoteBook {
     private String firstName;
     private String lastName;
     private String middleName;
+    private String concatName;
     private String login;
 
     public InputNoteBook(Scanner scanner, View view) {
@@ -38,9 +39,15 @@ public class InputNoteBook {
 
         this.firstName = regexController.inputValueWithRegexController(FIRST_NAME, regexName);
         this.lastName = regexController.inputValueWithRegexController(LAST_NAME, regexLastName);
+        setConcatName();
+        view.printMessage(concatName);
         this.middleName = regexController.inputValueWithRegexController(MIDDLE_NAME, regexMiddleName);
         this.login = regexController.inputValueWithRegexController(LOGIN_DATA, REGEX_LOGIN);
 
+    }
+
+    void setConcatName(){
+        this.concatName=lastName+" "+firstName.substring(0,1)+".";
     }
 
 }
