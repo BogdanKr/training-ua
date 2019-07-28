@@ -30,7 +30,7 @@ public class Controller {
 
             }
             if (menuOption == 2) {
-                new SortMenu();
+                new SortMenu(model, view, scanner).showMenu();
             }
             view.printMessage(CHOOSE_OPTION);
             view.printMenu(LOOK_LETTER, SORT_LETTERS, FIND_HEAD, EXIT);

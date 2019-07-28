@@ -7,12 +7,16 @@ public interface TextConstant {
     String SORT_LETTERS = "sort.letters";
     String FIND_HEAD = "find.head";
     String EXIT = "exit";
+
     String LOOK_INCOME = "look.income";
     String LOOK_SEND = "look.send";
     String LOOK_SPAM = "look.spam";
     String LOOK_DELETE = "look.delete";
-    String SORT_HEAD = "sort.head";
+
+    String SORT_TITLE = "sort.title";
     String SORT_DATE_INCOME = "sort.date.income";
+    String SORT_SENT = "sort.sent";
+    String SORT_RECIPIENT = "sort.recipient";
 
     String WARNING = "wrong.input";
     String WRONG_ENTER = "wrong.menu.input";
