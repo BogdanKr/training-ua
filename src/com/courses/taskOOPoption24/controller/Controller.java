@@ -3,11 +3,13 @@ package com.courses.taskOOPoption24.controller;
 import com.courses.taskOOPoption24.model.Model;
 import com.courses.taskOOPoption24.view.View;
 
-import static com.courses.taskOOPoption24.view.TextConstant.START_DATA;
+import java.util.Scanner;
+
+import static com.courses.taskOOPoption24.view.TextConstant.*;
 
 public class Controller {
     private Model model;
-    private View view;
+    private static View view;
 
 
     public Controller(Model model, View view) {
@@ -17,5 +19,41 @@ public class Controller {
 
     public void execute() {
         view.printMessage(START_DATA);
+        Scanner scanner = new Scanner(System.in);
+        int menuOption;
+        view.printMessage(CHOOSE_OPTION);
+        view.printMenu(LOOK_LETTER, SORT_LETTERS, FIND_HEAD, EXIT);
+
+        while ((menuOption = chooseStartMenu(scanner, 4)) != 4) {
+            if (menuOption == 1) {
+                new ShowLetters(model, view, scanner).showMenu();
+
+            }
+            if (menuOption == 2) {
+                new SortMenu();
+            }
+            view.printMessage(CHOOSE_OPTION);
+            view.printMenu(LOOK_LETTER, SORT_LETTERS, FIND_HEAD, EXIT);
+
+        }
     }
+
+    public static int inputIntValueWithScanner(Scanner sc) {
+        while (!sc.hasNextInt()) {
+            view.printMessage(WARNING);
+            sc.next();
+        }
+        return sc.nextInt();
+    }
+
+    public static int chooseStartMenu(Scanner scanner, int options) {
+        int chooseMenu;
+        while (true) {
+            chooseMenu = inputIntValueWithScanner(scanner);
+            if (chooseMenu > 0 && chooseMenu <= options) break;
+            view.printMessage(WRONG_ENTER);
+        }
+        return chooseMenu;
+    }
+
 }

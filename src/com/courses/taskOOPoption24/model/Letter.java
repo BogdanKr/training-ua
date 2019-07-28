@@ -3,28 +3,27 @@ package com.courses.taskOOPoption24.model;
 import java.util.Date;
 
 public enum Letter {
-    LETTER1("Hi", "Mama", "Me", new Date("12.06.2019"), new Date("12.06.2019"), Category.INCOME),
-
-    LETTER2("How are you", "Dad", "Me", new Date("10.06.2019"), new Date("10.06.2019"), Category.INCOME),
-    LETTER3("Work", "Me", "Kiril", new Date("12.06.2019"), new Date("12.06.2019"), Category.SEND),
-    LETTER4("holiday", "Me", "Max", new Date("12.05.2019"), new Date("13.05.2019"), Category.SEND),
-    LETTER5("Work", "Kiril", "Me", new Date("11.03.2018"), new Date("11.03.2018"), Category.DELETED),
-    LETTER6("TV", "LG-shop", "Me", new Date("12.06.2019"), new Date("12.06.2019"), Category.SPAM),
-    LETTER7("schoolIT", "ITschool", "Me", new Date("20.06.2019"), new Date("20.06.2019"), Category.DELETED),
-    LETTER8("Hi", "Kiril", "Me", new Date("12.06.2019"), new Date("12.06.2019"), Category.INCOME),
-    LETTER9("TV", "LG-shop", "Me", new Date("25.04.2019"), new Date("25.04.2019"), Category.SPAM),
-    LETTER10("Work2", "Me", "Max", new Date("02.07.2019"), new Date("02.07.2019"), Category.DELETED)
+    LETTER1("Hi       ", "Mama", "Me", new Date(119,05,22), new Date(119,05,22), Category.INCOME),
+    LETTER2("How are you", "Dad", "Me", new Date(119,05,22), new Date(119,05,22), Category.INCOME),
+    LETTER3("Work     ", "Me", "Kiril", new Date(119,2,13), new Date(119,2,13), Category.SEND),
+    LETTER4("holiday", "Me  ", "Max", new Date(119,05,1), new Date(119,05,1), Category.SEND),
+    LETTER5("Work ", "Kiril", "Me", new Date(119,02,11), new Date(119,3,11), Category.DELETED),
+    LETTER6("TV  ", "LG-shop", "Me", new Date(119,05,12), new Date(119,05,12), Category.SPAM),
+    LETTER7("IT    ", "ITschool", "Me", new Date(119,05,20), new Date(119,05,20), Category.DELETED),
+    LETTER8("Hi   ", "Kiril", "Me", new Date(119,05,12), new Date(119,05,12), Category.INCOME),
+    LETTER9("TV  ", "LG-shop", "Me", new Date(119,04,25), new Date(119,04,25), Category.SPAM),
+    LETTER10("Work2", "Me  ", "Max", new Date(119,06,2), new Date(119,06,2), Category.DELETED)
     ;
 
-    private String head;
+    private String title;
     private String sender;
     private String recipient;
     private Date send;
     private Date receive;
     private Category category;
 
-    private Letter(String head, String sender, String recipient, Date send, Date receive, Category category) {
-        this.head = head;
+    private Letter(String title, String sender, String recipient, Date send, Date receive, Category category) {
+        this.title = title;
         this.sender = sender;
         this.recipient = recipient;
         this.send = send;
@@ -32,8 +31,8 @@ public enum Letter {
         this.category = category;
     }
 
-    public String getHead() {
-        return head;
+    public String gettitle() {
+        return title;
     }
 
     public String getSender() {
@@ -54,5 +53,16 @@ public enum Letter {
 
     public Category getCategory() {
         return category;
+    }
+
+    @Override
+    public String toString() {
+        return "Letter " +
+                "title= '" + title + '\'' +
+                ", sender= '" + sender + '\'' +
+                ", recipient= '" + recipient + '\'' +
+                ", send= " + send +
+                ", receive= " + receive +
+                ", category= " + category ;
     }
 }
