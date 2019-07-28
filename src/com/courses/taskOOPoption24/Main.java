@@ -1,8 +1,9 @@
 package com.courses.taskOOPoption24;
 
-import com.courses.task3.controller.Controller;
-import com.courses.task3.model.Model;
-import com.courses.task3.view.View;
+
+import com.courses.taskOOPoption24.controller.Controller;
+import com.courses.taskOOPoption24.model.Model;
+import com.courses.taskOOPoption24.view.View;
 
 public class Main {
     public static void main(String[] args) {
