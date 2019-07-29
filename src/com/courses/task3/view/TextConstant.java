@@ -7,4 +7,5 @@ public interface TextConstant {
     String MIDDLE_NAME = "input.middle.name.data";
     String WRONG_INPUT = "input.wrong.data";
     String LOGIN_DATA = "input.login.data";
+    String NOT_UNICK_LOGIN = "not.unick.login";
 }
