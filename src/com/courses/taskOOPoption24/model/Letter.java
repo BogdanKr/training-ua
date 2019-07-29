@@ -4,6 +4,8 @@ import java.util.Date;
 
 public enum Letter {
     LETTER1("Hi         ", "Mama  ", "Me   ", new Date(119,05,22), new Date(119,05,22), Category.INCOME),
+    LETTER13("Hi         ", "Mama  ", "Me   ", new Date(119,05,22), new Date(119,05,22), Category.INCOME),
+    LETTER14("Hi         ", "Mama  ", "Me   ", new Date(119,05,22), new Date(119,05,22), Category.INCOME),
     LETTER2("How are you", "Dad   ", "Me   ", new Date(119,05,21), new Date(119,05,21), Category.INCOME),
     LETTER3("Work       ", "Me    ", "Kiril", new Date(119,2,13), new Date(119,2,13), Category.SEND),
     LETTER4("Holiday    ", "Me    ", "Max  ", new Date(119,05,1), new Date(119,05,1), Category.SEND),
@@ -12,7 +14,9 @@ public enum Letter {
     LETTER7("IT         ", "ITschool", "Me ", new Date(119,05,20), new Date(119,05,20), Category.DELETED),
     LETTER8("Hi         ", "Kiril  ", "Me  ", new Date(119,05,19), new Date(119,05,19), Category.INCOME),
     LETTER9("TV         ", "LG-shop", "Me  ", new Date(119,04,25), new Date(119,04,25), Category.SPAM),
-    LETTER10("Work2      ", "Me     ", "Max", new Date(119,06,02), new Date(119,06,02), Category.DELETED)
+    LETTER10("Work2      ", "Me     ", "Max ", new Date(119,06,01), new Date(119,06,01), Category.DELETED),
+    LETTER11("Work2      ", "Me     ", "Max ", new Date(119,06,02), new Date(119,06,02), Category.DELETED),
+    LETTER12("Work2      ", "Me     ", "Max ", new Date(119,06,03), new Date(119,06,03), Category.DELETED)
     ;
 
     private String title;

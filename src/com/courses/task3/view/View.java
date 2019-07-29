@@ -7,7 +7,7 @@ import static com.courses.task3.view.TextConstant.INPUT_STRING_DATA;
 import static com.courses.task3.view.TextConstant.WRONG_INPUT;
 
 public class View {
-    private static String MESSAGE_BUNDLE_NAME = "messages";
+    private static String MESSAGE_BUNDLE_NAME = "com.courses.task3.messages";
     public static final ResourceBundle bundle =
             ResourceBundle.getBundle(MESSAGE_BUNDLE_NAME,
                     new Locale("en","GB"));
