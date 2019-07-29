@@ -18,6 +18,8 @@ public interface TextConstant {
     String SORT_SENT = "sort.sent";
     String SORT_RECIPIENT = "sort.recipient";
 
+    String FIND_TITLE = "find.title";
+
     String WARNING = "wrong.input";
     String WRONG_ENTER = "wrong.menu.input";
 }

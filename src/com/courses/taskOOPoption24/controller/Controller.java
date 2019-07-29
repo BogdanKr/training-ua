@@ -34,7 +34,7 @@ public class Controller {
             }
 
             if (menuOption == 3) {
-
+                new FindMenu(model,view,scanner).find();
             }
 
             view.printMessage(CHOOSE_OPTION);
