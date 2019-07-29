@@ -1,6 +1,6 @@
 package com.courses.taskOOPoption24.controller;
 
-import com.courses.taskOOPoption24.model.Model;
+import com.courses.taskOOPoption24.model.PostBox;
 import com.courses.taskOOPoption24.view.View;
 
 import java.util.Scanner;
@@ -8,11 +8,11 @@ import java.util.Scanner;
 import static com.courses.taskOOPoption24.view.TextConstant.*;
 
 public class Controller {
-    private Model model;
+    private PostBox model;
     private static View view;
 
 
-    public Controller(Model model, View view) {
+    public Controller(PostBox model, View view) {
         this.model = model;
         this.view = view;
     }

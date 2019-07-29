@@ -47,7 +47,7 @@ public class InputNoteBook {
         this.middleName = utilityController.inputValueWithUtilityController(MIDDLE_NAME, regexMiddleName);
         this.login = utilityController.inputLogin();
 
-        model.getDataBaseNote().add(new NoteBook(firstName, lastName, middleName, login));
+        //model.getDataBaseNote().add(new NoteBook(firstName, lastName, middleName, login));
 
     }
 
