@@ -54,7 +54,7 @@ public class SortMenu {
         TreeMap<Date, Letter> letterTreeMap = new TreeMap<>();
         int count = 1;
         for (Letter letter : model.getLetters()) {
-            Date date = letter.getReceive();
+            Date date = letter.getSendDate();
             if (letterTreeMap.containsKey(date)) letterTreeMap.put(new Date(date.getTime() + count++), letter);
             else letterTreeMap.put(date, letter);
         }

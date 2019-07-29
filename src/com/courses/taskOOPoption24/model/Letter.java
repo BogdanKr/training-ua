@@ -1,6 +1,9 @@
 package com.courses.taskOOPoption24.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public enum Letter {
     LETTER1("Hi         ", "Mama  ", "Me   ", new Date(119,05,22), new Date(119,05,22), Category.INCOME),
@@ -22,16 +25,16 @@ public enum Letter {
     private String title;
     private String sender;
     private String recipient;
-    private Date send;
-    private Date receive;
+    private Date sendDate;
+    private Date receiveDate;
     private Category category;
 
     private Letter(String title, String sender, String recipient, Date send, Date receive, Category category) {
         this.title = title;
         this.sender = sender;
         this.recipient = recipient;
-        this.send = send;
-        this.receive = receive;
+        this.sendDate = send;
+        this.receiveDate = receive;
         this.category = category;
     }
 
@@ -48,11 +51,11 @@ public enum Letter {
     }
 
     public Date getSendDate() {
-        return send;
+        return sendDate;
     }
 
     public Date getReceive() {
-        return receive;
+        return receiveDate;
     }
 
     public Category getCategory() {
@@ -61,12 +64,13 @@ public enum Letter {
 
     @Override
     public String toString() {
+        //SimpleDateFormat dateFormat = new SimpleDateFormat("E dd.MM.yyyy");
         return "Letter " +
-                "title= '" + title + '\'' +
-                ", sender= '" + sender + '\'' +
-                ", recipient= '" + recipient + '\'' +
-                ", send= " + send +
-                ", receive= " + receive +
+                "title= " + title  +
+                ", sender= " + sender  +
+                ", recipient= " + recipient  +
+                ", sent= " + DateFormat.getDateInstance(DateFormat.FULL, Locale.ENGLISH).format(sendDate) +
+                ", received= " + DateFormat.getDateInstance(DateFormat.FULL, Locale.ENGLISH).format(receiveDate) +
                 ", category= " + category ;
     }
 }
