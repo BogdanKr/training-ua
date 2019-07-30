@@ -6,6 +6,8 @@ import com.courses.task_oop_option24.model.PostBox;
 import com.courses.task_oop_option24.model.Service;
 import com.courses.task_oop_option24.view.View;
 
+import java.util.Comparator;
+
 import static com.courses.task_oop_option24.view.TextConstant.*;
 
 public class Controller {
@@ -82,7 +84,28 @@ public class Controller {
     }
 
     private void sortMenu() {
-
+        Service service = new Service();
+        view.printMessage(CHOOSE_OPTION);
+        view.printMenu(SORT_TITLE, SORT_DATE_INCOME, SORT_SENT, SORT_RECIPIENT);
+        int menuOption = utilityController.chooseStartMenu(4);
+        switch (menuOption) {
+            case 1: {
+                view.printLetters(service.sortWithComparator(postBox, SORT_TITLE));
+                break;
+            }
+            case 2: {
+                view.printLetters(service.sortWithComparator(postBox, SORT_DATE_INCOME));
+                break;
+            }
+            case 3: {
+                view.printLetters(service.sortWithComparator(postBox, SORT_SENT));
+                break;
+            }
+            case 4: {
+                view.printLetters(service.sortWithComparator(postBox, SORT_RECIPIENT));
+                break;
+            }
+        }
     }
 
     private void findMenu() {

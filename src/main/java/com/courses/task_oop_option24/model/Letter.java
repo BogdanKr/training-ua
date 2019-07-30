@@ -67,4 +67,5 @@ public abstract class Letter {
                 ", category=" + category +
                 '}';
     }
+
 }
