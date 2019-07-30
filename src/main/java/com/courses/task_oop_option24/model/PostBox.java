@@ -12,4 +12,12 @@ public class PostBox {
             letterList.add(letter.getLetter());
         }
     }
+
+    public List<Letter> getLetterList() {
+        return letterList;
+    }
+
+    public void setLetterList(List<Letter> letterList) {
+        this.letterList = letterList;
+    }
 }

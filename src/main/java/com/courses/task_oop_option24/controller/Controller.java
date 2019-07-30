@@ -1,6 +1,8 @@
 package com.courses.task_oop_option24.controller;
 
+import com.courses.task_oop_option24.model.Category;
 import com.courses.task_oop_option24.model.PostBox;
+import com.courses.task_oop_option24.model.Service;
 import com.courses.task_oop_option24.view.View;
 
 import java.util.Scanner;
@@ -8,12 +10,12 @@ import java.util.Scanner;
 import static com.courses.task_oop_option24.view.TextConstant.*;
 
 public class Controller {
-    private PostBox model;
+    private PostBox postBox;
     private static View view;
 
 
-    public Controller(PostBox model, View view) {
-        this.model = model;
+    public Controller(PostBox postBox, View view) {
+        this.postBox = postBox;
         this.view = view;
     }
 
@@ -27,27 +29,88 @@ public class Controller {
         while ((menuOption = chooseStartMenu(scanner, 4)) != 4) {
             switch (menuOption) {
                 case 1: {
-                    new ShowLetters(model, view, scanner).showMenu();
+                    showMenu(postBox, view, scanner);
                     break;
                 }
                 case 2: {
-                    new SortMenu(model, view, scanner).showMenu();
+                    sortMenu(postBox, view, scanner);
                     break;
                 }
 
                 case 3: {
-                    new FindMenu(model, view, scanner).find();
+                    findMenu(postBox, view, scanner);
                     break;
                 }
             }
-
             view.printMessage(CHOOSE_OPTION);
             view.printMenu(LOOK_LETTER, SORT_LETTERS, FIND_HEAD, EXIT);
-
         }
     }
 
-    public static int inputIntValueWithScanner(Scanner sc) {
+
+    private void showMenu(PostBox postBox, View view, Scanner scanner) {
+        Service service = new Service();
+        view.printMessage(CHOOSE_OPTION);
+        view.printMenu(LOOK_LETTER, LOOK_INCOME, LOOK_SEND, LOOK_SPAM, LOOK_DELETE);
+        int menuOption = chooseStartMenu(scanner, 5);
+        switch (menuOption) {
+            case 1: {
+                view.printLetters(postBox.getLetterList());
+                break;
+            }
+            case 2: {
+                view.printLetters(service.showNeedCategory(postBox, Category.INCOME));
+                break;
+            }
+            case 3: {
+                view.printLetters(service.showNeedCategory(postBox, Category.SEND));
+                break;
+            }
+            case 4: {
+                view.printLetters(service.showNeedCategory(postBox, Category.SPAM));
+                break;
+            }
+            case 5: {
+                view.printLetters(service.showNeedCategory(postBox, Category.DELETED));
+                break;
+            }
+        }
+    }
+
+    private void sortMenu(PostBox postBox, View view, Scanner scanner) {
+
+    }
+
+    private void findMenu(PostBox postBox, View view, Scanner scanner) {
+        Service service = new Service();
+        view.printMessage(CHOOSE_OPTION);
+        view.printMenu(FIND_TITLE, FIND_SENDER, FIND_RECIPIENT);
+        int menuOption = chooseStartMenu(scanner, 3);
+        switch (menuOption) {
+            case 1: {
+                view.printMessage(FIND_TITLE);
+                String searchText = scanner.next();
+                view.printLetters(service.findInNeedCategoty(postBox, searchText, FIND_TITLE));
+                break;
+            }
+            case 2: {
+                view.printMessage(FIND_SENDER);
+                String searchText = scanner.next();
+                view.printLetters(service.findInNeedCategoty(postBox, searchText, FIND_SENDER));
+                break;
+            }
+            case 3: {
+                view.printMessage(FIND_RECIPIENT);
+                String searchText = scanner.next();
+                view.printLetters(service.findInNeedCategoty(postBox, searchText, FIND_RECIPIENT));
+                break;
+            }
+        }
+    }
+
+
+
+    private int inputIntValueWithScanner(Scanner sc) {
         while (!sc.hasNextInt()) {
             view.printMessage(WARNING);
             sc.next();
@@ -55,7 +118,7 @@ public class Controller {
         return sc.nextInt();
     }
 
-    public static int chooseStartMenu(Scanner scanner, int options) {
+    private int chooseStartMenu(Scanner scanner, int options) {
         int chooseMenu;
         while (true) {
             chooseMenu = inputIntValueWithScanner(scanner);
