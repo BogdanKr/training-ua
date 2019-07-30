@@ -18,4 +18,15 @@ public class TextLetter extends Letter {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    @Override
+    public String toString() {
+        return "TextLetter{title='" + title + '\'' +
+                ", sender='" + sender + '\'' +
+                ", recipient='" + recipient + '\'' +
+                ", sendDate=" + sendDate +
+                ", category=" + category +
+                " message='" + message + '\'' +
+                '}';
+    }
 }

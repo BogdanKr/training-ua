@@ -3,11 +3,11 @@ package com.courses.task_oop_option24.model;
 import java.time.LocalDate;
 
 public abstract class Letter {
-    private String title;
-    private String sender;
-    private String recipient;
-    private LocalDate sendDate;
-    private Category category;
+    protected String title;
+    protected String sender;
+    protected String recipient;
+    protected LocalDate sendDate;
+    protected Category category;
 
     public Letter(String title, String sender, String recipient, LocalDate sendDate, Category category) {
         this.title = title;
@@ -55,5 +55,16 @@ public abstract class Letter {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Letter{" +
+                "title='" + title + '\'' +
+                ", sender='" + sender + '\'' +
+                ", recipient='" + recipient + '\'' +
+                ", sendDate=" + sendDate +
+                ", category=" + category +
+                '}';
     }
 }

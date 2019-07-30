@@ -1,6 +1,7 @@
 package com.courses.task_oop_option24.controller;
 
 import com.courses.task_oop_option24.model.DBLetter;
+import com.courses.task_oop_option24.model.Letter;
 import com.courses.task_oop_option24.model.PostBox;
 import com.courses.task_oop_option24.view.View;
 
@@ -23,29 +24,29 @@ public class SortMenu {
         this.scanner = scanner;
     }
 
-    void showMenu() {
-        view.printMessage(CHOOSE_OPTION);
-        view.printMenu(SORT_TITLE, SORT_DATE_INCOME, SORT_SENT, SORT_RECIPIENT);
-        int menuOption = Controller.chooseStartMenu(scanner, 4);
-        if (menuOption == 1) {
-            sortTitle();
-        }
-        if (menuOption == 2) {
-            sortDateIncome();
-        }
-        if (menuOption == 3) {
-            sortSent();
-        }
-        if (menuOption == 4) {
-            sortRecipient();
-        }
-    }
+//    void showMenu() {
+//        view.printMessage(CHOOSE_OPTION);
+//        view.printMenu(SORT_TITLE, SORT_DATE_INCOME, SORT_SENT, SORT_RECIPIENT);
+//        int menuOption = chooseStartMenu(scanner, 4);
+//        if (menuOption == 1) {
+//            sortTitle();
+//        }
+//        if (menuOption == 2) {
+//            sortDateIncome();
+//        }
+//        if (menuOption == 3) {
+//            sortSent();
+//        }
+//        if (menuOption == 4) {
+//            sortRecipient();
+//        }
+//    }
 
     private void sortTitle() {
-        TreeMap<String, DBLetter> letterTreeMap = new TreeMap<>();
+        TreeMap<String, Letter> letterTreeMap = new TreeMap<>();
         int count = 1;
-        for (DBLetter letter : model.getLetters()) {
-            String title = letter.gettitle();
+        for (Letter letter : model.getLetterList()) {
+            String title = letter.getTitle();
             if (letterTreeMap.containsKey(title)) letterTreeMap.put(title + count++, letter);
             else letterTreeMap.put(title, letter);
         }
@@ -66,9 +67,9 @@ public class SortMenu {
     }
 
     private void sortSent() {
-        TreeMap<String, DBLetter> letterTreeMap = new TreeMap<>();
+        TreeMap<String, Letter> letterTreeMap = new TreeMap<>();
         int count = 1;
-        for (DBLetter letter : model.getLetters()) {
+        for (Letter letter : model.getLetterList()) {
             String sender = letter.getSender();
             if (letterTreeMap.containsKey(sender)) letterTreeMap.put(sender + count++, letter);
             else letterTreeMap.put(sender, letter);
@@ -77,9 +78,9 @@ public class SortMenu {
     }
 
     private void sortRecipient() {
-        TreeMap<String, DBLetter> letterTreeMap = new TreeMap<>();
+        TreeMap<String, Letter> letterTreeMap = new TreeMap<>();
         int count = 1;
-        for (DBLetter letter : model.getLetters()) {
+        for (Letter letter : model.getLetterList()) {
             String recipient = letter.getRecipient();
             if (letterTreeMap.containsKey(recipient)) letterTreeMap.put(recipient + count++, letter);
             else letterTreeMap.put(recipient, letter);
@@ -87,8 +88,8 @@ public class SortMenu {
         showSortedLetters(letterTreeMap);
     }
 
-    private void showSortedLetters(TreeMap<String, DBLetter> letterTreeMap) {
-        for (DBLetter letter : letterTreeMap.values()) {
+    private void showSortedLetters(TreeMap<String, Letter> letterTreeMap) {
+        for (Letter letter : letterTreeMap.values()) {
             view.printOneLetter(letter);
         }
         System.out.println();

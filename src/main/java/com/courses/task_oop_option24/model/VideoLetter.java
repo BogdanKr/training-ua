@@ -27,4 +27,16 @@ public class VideoLetter extends Letter {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "VideoLetter{ title='" + title + '\'' +
+                ", sender='" + sender + '\'' +
+                ", recipient='" + recipient + '\'' +
+                ", sendDate=" + sendDate +
+                ", category=" + category+
+                " fileName='" + fileName + '\'' +
+                ", duration=" + duration +
+                '}';
+    }
 }

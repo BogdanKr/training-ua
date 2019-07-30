@@ -1,6 +1,5 @@
 package com.courses.task_oop_option24.view;
 
-import com.courses.task_oop_option24.model.DBLetter;
 import com.courses.task_oop_option24.model.Letter;
 
 import java.util.List;
@@ -28,7 +27,7 @@ public class View {
         }
     }
 
-    public void printOneLetter(DBLetter letter){
+    public void printOneLetter(Letter letter){
         System.out.println(letter);
     }
 

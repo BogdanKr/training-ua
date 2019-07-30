@@ -6,6 +6,8 @@ public interface TextConstant {
     String LOOK_LETTER = "look.letters";
     String SORT_LETTERS = "sort.letters";
     String FIND_HEAD = "find.head";
+    String CREATE_TEXT_MESSAGE = "create.text.message";
+    String INPUT_TEXT="input.text.message";
     String EXIT = "exit";
 
     String LOOK_INCOME = "look.income";
