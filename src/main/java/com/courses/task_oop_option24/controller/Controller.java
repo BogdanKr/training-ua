@@ -25,16 +25,20 @@ public class Controller {
         view.printMenu(LOOK_LETTER, SORT_LETTERS, FIND_HEAD, EXIT);
 
         while ((menuOption = chooseStartMenu(scanner, 4)) != 4) {
-            if (menuOption == 1) {
-                new ShowLetters(model, view, scanner).showMenu();
+            switch (menuOption) {
+                case 1: {
+                    new ShowLetters(model, view, scanner).showMenu();
+                    break;
+                }
+                case 2: {
+                    new SortMenu(model, view, scanner).showMenu();
+                    break;
+                }
 
-            }
-            if (menuOption == 2) {
-                new SortMenu(model, view, scanner).showMenu();
-            }
-
-            if (menuOption == 3) {
-                new FindMenu(model,view,scanner).find();
+                case 3: {
+                    new FindMenu(model, view, scanner).find();
+                    break;
+                }
             }
 
             view.printMessage(CHOOSE_OPTION);

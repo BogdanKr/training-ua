@@ -1,6 +1,6 @@
 package com.courses.task_oop_option24.view;
 
-import com.courses.task_oop_option24.model.Letter;
+import com.courses.task_oop_option24.model.DBLetter;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -22,14 +22,14 @@ public class View {
         System.out.println();
     }
 
-    public void printLetters(Letter[] letters){
-        for (Letter lt : letters){
+    public void printLetters(DBLetter[] letters){
+        for (DBLetter lt : letters){
             System.out.println(lt);
         }
         System.out.println();
     }
 
-    public void printOneLetter(Letter letter){
+    public void printOneLetter(DBLetter letter){
         System.out.println(letter);
     }
 

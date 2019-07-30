@@ -1,9 +1,15 @@
 package com.courses.task_oop_option24.model;
 
-public class PostBox {
-    private Letter[] letters = Letter.values();
+import java.util.ArrayList;
+import java.util.List;
 
-    public Letter[] getLetters() {
-        return letters;
+public class PostBox {
+    List<Letter> letterList;
+
+    {
+        letterList = new ArrayList<>();
+        for (DBLetter letter : DBLetter.values()) {
+            letterList.add(letter.getLetter());
+        }
     }
 }

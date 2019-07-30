@@ -1,7 +1,7 @@
 package com.courses.task_oop_option24.controller;
 
 import com.courses.task_oop_option24.model.Category;
-import com.courses.task_oop_option24.model.Letter;
+import com.courses.task_oop_option24.model.DBLetter;
 import com.courses.task_oop_option24.model.PostBox;
 import com.courses.task_oop_option24.view.View;
 
@@ -24,45 +24,52 @@ public class ShowLetters {
         view.printMessage(CHOOSE_OPTION);
         view.printMenu(LOOK_LETTER, LOOK_INCOME, LOOK_SEND, LOOK_SPAM, LOOK_DELETE);
         int menuOption = Controller.chooseStartMenu(scanner, 5);
-        if (menuOption == 1) {
-            view.printLetters(model.getLetters());
-        }
-        if (menuOption == 2) {
-            showIncome();
-        }
-        if (menuOption == 3) {
-            showSent();
-        }
-        if (menuOption == 4) {
-            showSpam();
-        }
+        switch (menuOption) {
+            case 1: {
+                view.printLetters(model.getLetters());
+                break;
+            }
+            case 2: {
+                showIncome();
+                break;
+            }
+            case 3: {
+                showSent();
+                break;
+            }
+            case 4: {
+                showSpam();
+                break;
+            }
 
-        if (menuOption == 5) {
-            showDelete();
+            case 5: {
+                showDelete();
+                break;
+            }
         }
     }
 
     private void showIncome() {
-        for (Letter letter : model.getLetters()) {
-            if (letter.getCategory()== Category.INCOME) view.printOneLetter(letter);
+        for (DBLetter letter : model.getLetters()) {
+            if (letter.getCategory() == Category.INCOME) view.printOneLetter(letter);
         }
     }
 
     private void showSent() {
-        for (Letter letter : model.getLetters()) {
-            if (letter.getCategory()== Category.SEND) view.printOneLetter(letter);
+        for (DBLetter letter : model.getLetters()) {
+            if (letter.getCategory() == Category.SEND) view.printOneLetter(letter);
         }
     }
 
     private void showSpam() {
-        for (Letter letter : model.getLetters()) {
-            if (letter.getCategory()== Category.SPAM) view.printOneLetter(letter);
+        for (DBLetter letter : model.getLetters()) {
+            if (letter.getCategory() == Category.SPAM) view.printOneLetter(letter);
         }
     }
 
     private void showDelete() {
-        for (Letter letter : model.getLetters()) {
-            if (letter.getCategory()== Category.DELETED) view.printOneLetter(letter);
+        for (DBLetter letter : model.getLetters()) {
+            if (letter.getCategory() == Category.DELETED) view.printOneLetter(letter);
         }
     }
 }
