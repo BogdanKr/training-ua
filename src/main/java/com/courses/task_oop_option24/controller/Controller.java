@@ -1,6 +1,7 @@
 package com.courses.task_oop_option24.controller;
 
 import com.courses.task_oop_option24.model.Category;
+import com.courses.task_oop_option24.model.Letter;
 import com.courses.task_oop_option24.model.PostBox;
 import com.courses.task_oop_option24.model.Service;
 import com.courses.task_oop_option24.view.View;
@@ -10,7 +11,7 @@ import static com.courses.task_oop_option24.view.TextConstant.*;
 public class Controller {
     private PostBox postBox;
     private View view;
-    private UtilityController utilityController = new UtilityController(view);
+    private UtilityController utilityController;
 
 
     public Controller(PostBox postBox, View view) {
@@ -19,6 +20,7 @@ public class Controller {
     }
 
     public void execute() {
+        utilityController = new UtilityController(view);
         view.printMessage(START_DATA);
         int menuOption;
         view.printMessage(CHOOSE_OPTION);
@@ -45,7 +47,7 @@ public class Controller {
                 }
             }
             view.printMessage(CHOOSE_OPTION);
-            view.printMenu(LOOK_LETTER, SORT_LETTERS, FIND_HEAD, EXIT);
+            view.printMenu(LOOK_LETTER, SORT_LETTERS, FIND_HEAD, CREATE_TEXT_MESSAGE, EXIT);
         }
     }
 
@@ -87,7 +89,7 @@ public class Controller {
         Service service = new Service();
         view.printMessage(CHOOSE_OPTION);
         view.printMenu(FIND_TITLE, FIND_SENDER, FIND_RECIPIENT);
-        int menuOption = utilityController.chooseStartMenu( 3);
+        int menuOption = utilityController.chooseStartMenu(3);
         switch (menuOption) {
             case 1: {
                 view.printMessage(FIND_TITLE);
@@ -111,6 +113,11 @@ public class Controller {
     }
 
     private void createTextMessage() {
-
+        view.printMessage(INPUT_TEXT);
+        String message = utilityController.inputText();
+        Service service = new Service();
+        Letter letter = service.createTextLetter(message);
+        view.printMessage(LETTER_WAS_SENT);
+        postBox.getLetterList().add(letter);
     }
 }

@@ -21,7 +21,7 @@ public class TextLetter extends Letter {
 
     @Override
     public String toString() {
-        return "TextLetter{title='" + title + '\'' +
+        return "TextLetter{ title='" + title + '\'' +
                 ", sender='" + sender + '\'' +
                 ", recipient='" + recipient + '\'' +
                 ", sendDate=" + sendDate +

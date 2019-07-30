@@ -1,5 +1,6 @@
 package com.courses.task_oop_option24.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,22 +24,31 @@ public class Service {
     public List<Letter> findInNeedCategoty(PostBox postBox, String searchText, String needCategory) {
         letterList = new ArrayList<>();
         switch (needCategory) {
-            case (FIND_TITLE):
+            case (FIND_TITLE): {
                 for (Letter letter : postBox.getLetterList()) {
                     if (letter.getTitle().trim().equalsIgnoreCase(searchText)) letterList.add(letter);
-                    break;
                 }
-            case (FIND_SENDER):
+                break;
+            }
+            case (FIND_SENDER): {
                 for (Letter letter : postBox.getLetterList()) {
                     if (letter.getSender().trim().equalsIgnoreCase(searchText)) letterList.add(letter);
-                    break;
                 }
-            case (FIND_RECIPIENT):
+                break;
+            }
+            case (FIND_RECIPIENT): {
                 for (Letter letter : postBox.getLetterList()) {
                     if (letter.getRecipient().trim().equalsIgnoreCase(searchText)) letterList.add(letter);
-                    break;
                 }
+                break;
+            }
         }
         return letterList;
+    }
+
+    public Letter createTextLetter(String message) {
+        Letter letter = new TextLetter("New", "Me", "Somebody",
+                LocalDate.now(), Category.SEND, message);
+        return letter;
     }
 }

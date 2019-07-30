@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public enum DBLetter {
-    LETTER1(new TextLetter("Hi         ", "Mama  ", "Me   ", LocalDate.of(2019, 05, 22), Category.INCOME, "some message...")),
+    LETTER1(new TextLetter("Hi         ", "Mam  ", "Me   ", LocalDate.of(2019, 05, 22), Category.INCOME, "some message...")),
     LETTER2(new TextLetter("How are you", "Dad   ", "Me   ", LocalDate.of(2019, 05, 21), Category.INCOME, "some message...")),
     LETTER3(new TextLetter("Work       ", "Me    ", "Kiril", LocalDate.of(2019, 02, 13), Category.SEND, "some message...")),
     LETTER4(new VideoLetter("Holiday    ", "Me    ", "Max  ", LocalDate.of(2019, 05, 2), Category.SEND, "fileName1", 11)),
@@ -16,8 +16,8 @@ public enum DBLetter {
     LETTER10(new TextLetter("Work2      ", "Me     ", "Max ", LocalDate.of(2019, 06, 01), Category.DELETED, "some message...")),
     LETTER11(new TextLetter("Work2      ", "Me     ", "Max ", LocalDate.of(2019, 06, 02), Category.DELETED, "some message...")),
     LETTER12(new TextLetter("Work2      ", "Me     ", "Max ", LocalDate.of(2019, 06, 03), Category.DELETED, "some message...")),
-    LETTER13(new VideoLetter("Hi         ", "Mama  ", "Me   ", LocalDate.of(2019, 05, 22), Category.INCOME, "fileName4", 33)),
-    LETTER14(new VideoLetter("Hi         ", "Mama  ", "Me   ", LocalDate.of(2019, 05, 22), Category.INCOME, "fileName7", 34));
+    LETTER13(new VideoLetter("Hi       ", "Mam  ", "Me   ", LocalDate.of(2019, 05, 22), Category.INCOME, "fileName4", 33)),
+    LETTER14(new VideoLetter("Hi       ", "Mam  ", "Me   ", LocalDate.of(2019, 05, 22), Category.INCOME, "fileName7", 34));
 
     private Letter letter;
 
@@ -28,13 +28,4 @@ public enum DBLetter {
     public Letter getLetter() {
         return letter;
     }
-    //    @Override
-//    public String toString() {
-//        return "Letter " +
-//                "title= " + title +
-//                ", sender= " + sender +
-//                ", recipient= " + recipient +
-//                ", sent= " + sendDate.format(DateTimeFormatter.ISO_DATE) +
-//                ", category= " + category;
-//    }
 }

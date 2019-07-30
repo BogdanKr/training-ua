@@ -8,6 +8,7 @@ public interface TextConstant {
     String FIND_HEAD = "find.head";
     String CREATE_TEXT_MESSAGE = "create.text.message";
     String INPUT_TEXT="input.text.message";
+    String LETTER_WAS_SENT="letter.was.sent";
     String EXIT = "exit";
 
     String LOOK_INCOME = "look.income";

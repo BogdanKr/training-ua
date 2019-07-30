@@ -7,8 +7,8 @@ import java.util.Scanner;
 import static com.courses.task_oop_option24.view.TextConstant.WARNING;
 import static com.courses.task_oop_option24.view.TextConstant.WRONG_ENTER;
 
- class UtilityController {
-    private Scanner sc=  new Scanner(System.in);
+class UtilityController {
+    private Scanner sc = new Scanner(System.in);
     private View view;
 
     UtilityController(View view) {
@@ -33,7 +33,8 @@ import static com.courses.task_oop_option24.view.TextConstant.WRONG_ENTER;
         return chooseMenu;
     }
 
-    String inputText(){
-        return sc.next();
+    String inputText() {
+        sc.nextLine();
+        return sc.nextLine();
     }
 }
