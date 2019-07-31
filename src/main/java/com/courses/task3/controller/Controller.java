@@ -1,15 +1,15 @@
 package com.courses.task3.controller;
 
-import com.courses.task3.model.Model;
+import com.courses.task3.model.NoteBook;
 import com.courses.task3.view.View;
 
 import java.util.Scanner;
 
 public class Controller {
-    private Model model;
+    private NoteBook model;
     private View view;
 
-    public Controller(Model model, View view) {
+    public Controller(NoteBook model, View view) {
         this.model = model;
         this.view = view;
     }

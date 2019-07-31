@@ -1,6 +1,6 @@
 package com.courses.task3.controller;
 
-import com.courses.task3.model.Model;
+import com.courses.task3.model.NoteBook;
 import com.courses.task3.view.View;
 
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import static com.courses.task3.view.TextConstant.*;
 public class InputNoteBook {
     private Scanner scanner;
     private View view;
-    private Model model;
+    private NoteBook model;
 
     private String firstName;
     private String lastName;
@@ -19,7 +19,7 @@ public class InputNoteBook {
     private String concatName;
     private String login;
 
-    public InputNoteBook(Scanner scanner, View view, Model model) {
+    public InputNoteBook(Scanner scanner, View view, NoteBook model) {
         this.scanner = scanner;
         this.view = view;
         this.model = model;
@@ -46,7 +46,7 @@ public class InputNoteBook {
         this.middleName = utilityController.inputValueWithUtilityController(MIDDLE_NAME, regexMiddleName);
         this.login = utilityController.inputLogin();
 
-        //model.getDataBaseNote().add(new NoteBook(firstName, lastName, middleName, login));
+      //  model.getDataBaseNote().add(new NoteBook(firstName, lastName, middleName, login));
 
     }
 
