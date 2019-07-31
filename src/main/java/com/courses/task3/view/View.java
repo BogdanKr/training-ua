@@ -20,7 +20,7 @@ public class View {
         System.out.println(message);
     }
 
-    public String concatenationMessage (String... message){
+    private String concatenationMessage(String... message){
         StringBuilder concat = new StringBuilder();
         for (String msg : message){
             concat = concat.append(msg);

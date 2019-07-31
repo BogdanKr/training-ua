@@ -1,9 +1,5 @@
 package com.courses.task3.model;
 
-import java.util.List;
-
-import static com.courses.task3.view.TextConstant.NOT_UNICK_LOGIN;
-
 public enum DBNote implements Note {
     NOTE_1("Bogdan", "Krasun", "Vitalievich", "bogdan123"),
     NOTE_2("Max", "Gorbachev", "Maaaxxxx", "max555"),
@@ -20,7 +16,6 @@ public enum DBNote implements Note {
         this.lastName = lastName;
         this.middleName = middleName;
         this.login = login;
-        //checkLogin(login);
      }
 
     public String getFirstName() {
@@ -48,6 +43,4 @@ public enum DBNote implements Note {
                 ", login='" + login + '\'' +
                 '}';
     }
-
-
 }

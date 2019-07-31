@@ -3,7 +3,6 @@ package com.courses.task3.controller;
 
 import com.courses.task3.model.CreateNote;
 import com.courses.task3.model.NotUnickNoteExc;
-import com.courses.task3.model.Note;
 import com.courses.task3.model.NoteBook;
 import com.courses.task3.view.View;
 
@@ -29,7 +28,7 @@ public class InputNoteBook {
         this.noteBook = noteBook;
     }
 
-    public void inputNote() {
+     void inputNote() {
         UtilityController utilityController = new UtilityController(scanner, view);
         String regexName =
                 (String.valueOf(View.bundle.getLocale()).equals("ua"))
@@ -51,7 +50,7 @@ public class InputNoteBook {
         CreateNote createNote = null;
         while (true) {
             try {
-                this.login = utilityController.inputLogin();
+                this.login = utilityController.inputValueWithUtilityController(LOGIN_DATA, REGEX_LOGIN);
                 createNote = new CreateNote(firstName, lastName, middleName, login);
                 break;
             } catch (NotUnickNoteExc notUnickNoteExc) {
@@ -62,7 +61,7 @@ public class InputNoteBook {
         view.printNoteBook(noteBook.getDataBaseNote());
     }
 
-    void setConcatName() {
+    private void setConcatName() {
         this.concatName = lastName + " " + firstName.substring(0, 1) + ".";
     }
 
