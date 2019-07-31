@@ -1,13 +1,14 @@
 package com.courses.task3.model;
 
+import java.util.List;
+
 import static com.courses.task3.view.TextConstant.NOT_UNICK_LOGIN;
 
 public enum DBNote implements Note {
     NOTE_1("Bogdan", "Krasun", "Vitalievich", "bogdan123"),
     NOTE_2("Max", "Gorbachev", "Maaaxxxx", "max555"),
     NOTE_3("Vova", "Putin", "Vladimirovich", "vovan_123"),
-    NOTE_4("Alex", "Timoshenko", "Petrovich", "timohaa"),
-    NOTE_5("Petya", "Poroshenko", "Alekseevich", "poroh2019"),
+    NOTE_4("Petya", "Poroshenko", "Alekseevich", "poroh2019"),
     ;
     private String firstName;
     private String lastName;
@@ -38,13 +39,15 @@ public enum DBNote implements Note {
         return login;
     }
 
-    private void checkLogin(String login)  {
-        try {
-            for (DBNote note : DBNote.values()){
-                if (login.equals(note.getLogin())) throw new NotUnickNoteExc(NOT_UNICK_LOGIN);
-            }
-        } catch (NotUnickNoteExc notUnickNoteExc) {
-
-        }
+    @Override
+    public String toString() {
+        return "DBNote{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", login='" + login + '\'' +
+                '}';
     }
+
+
 }

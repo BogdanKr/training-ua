@@ -1,5 +1,6 @@
 package com.courses.task3.model;
 
-public interface Note {
+import java.util.List;
 
+public interface Note {
 }

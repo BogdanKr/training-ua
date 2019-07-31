@@ -1,5 +1,9 @@
 package com.courses.task3.controller;
 
+
+import com.courses.task3.model.CreateNote;
+import com.courses.task3.model.NotUnickNoteExc;
+import com.courses.task3.model.Note;
 import com.courses.task3.model.NoteBook;
 import com.courses.task3.view.View;
 
@@ -11,7 +15,7 @@ import static com.courses.task3.view.TextConstant.*;
 public class InputNoteBook {
     private Scanner scanner;
     private View view;
-    private NoteBook model;
+    private NoteBook noteBook;
 
     private String firstName;
     private String lastName;
@@ -19,10 +23,10 @@ public class InputNoteBook {
     private String concatName;
     private String login;
 
-    public InputNoteBook(Scanner scanner, View view, NoteBook model) {
+    public InputNoteBook(Scanner scanner, View view, NoteBook noteBook) {
         this.scanner = scanner;
         this.view = view;
-        this.model = model;
+        this.noteBook = noteBook;
     }
 
     public void inputNote() {
@@ -44,10 +48,18 @@ public class InputNoteBook {
         setConcatName();
         view.printMessage(concatName);
         this.middleName = utilityController.inputValueWithUtilityController(MIDDLE_NAME, regexMiddleName);
-        this.login = utilityController.inputLogin();
-
-      //  model.getDataBaseNote().add(new NoteBook(firstName, lastName, middleName, login));
-
+        CreateNote createNote = null;
+        while (true) {
+            try {
+                this.login = utilityController.inputLogin();
+                createNote = new CreateNote(firstName, lastName, middleName, login);
+                break;
+            } catch (NotUnickNoteExc notUnickNoteExc) {
+                view.printWrongInput(notUnickNoteExc.getMessage());
+            }
+        }
+        noteBook.getDataBaseNote().add(createNote);
+        view.printNoteBook(noteBook.getDataBaseNote());
     }
 
     void setConcatName() {

@@ -6,17 +6,18 @@ import com.courses.task3.view.View;
 import java.util.Scanner;
 
 public class Controller {
-    private NoteBook model;
+    private NoteBook noteBook;
     private View view;
 
-    public Controller(NoteBook model, View view) {
-        this.model = model;
+    public Controller(NoteBook noteBook, View view) {
+        this.noteBook = noteBook;
         this.view = view;
     }
 
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        InputNoteBook inputNoteBook = new InputNoteBook(scanner, view, model);
+        view.printNoteBook(noteBook.getDataBaseNote());
+        InputNoteBook inputNoteBook = new InputNoteBook(scanner, view, noteBook);
         inputNoteBook.inputNote();
     }
 }

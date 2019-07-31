@@ -1,5 +1,8 @@
 package com.courses.task3.view;
 
+import com.courses.task3.model.Note;
+
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -10,7 +13,7 @@ public class View {
     private static String MESSAGE_BUNDLE_NAME = "messages";
     public static final ResourceBundle bundle =
             ResourceBundle.getBundle(MESSAGE_BUNDLE_NAME,
-                    new Locale("en","GB"));
+                    new Locale("en"));
                     //new Locale("ua", "UA"));
 
     public void printMessage (String message){
@@ -38,5 +41,11 @@ public class View {
                 bundle.getString(INPUT_STRING_DATA),
                 bundle.getString(message)
         ));
+    }
+
+    public void printNoteBook(List<Note> noteBookList){
+        for (Note note : noteBookList){
+            System.out.println(note);
+        }
     }
 }
