@@ -33,6 +33,4 @@ public class CreateNote implements Note {
                 ", login='" + login + '\'' +
                 '}';
     }
-
-
 }

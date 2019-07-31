@@ -18,18 +18,6 @@ public enum DBNote implements Note {
         this.login = login;
      }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
     public String getLogin() {
         return login;
     }
