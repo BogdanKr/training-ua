@@ -9,19 +9,19 @@ public class CreateNote implements Note {
     private String login;
 
     public CreateNote(String firstName, String lastName, String middleName, String login) throws NotUnickNoteExc {
+        checkLogin(login);
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
-        checkLogin(login);
         this.login = login;
     }
 
     private void checkLogin(String login) throws NotUnickNoteExc {
-            for (DBNote note : DBNote.values()){
-                if (login.equals(note.getLogin())) {
-                    throw new NotUnickNoteExc(NOT_UNICK_LOGIN);
-                }
+        for (DBNote note : DBNote.values()) {
+            if (login.equals(note.getLogin())) {
+                throw new NotUnickNoteExc(NOT_UNICK_LOGIN);
             }
+        }
     }
 
     @Override
