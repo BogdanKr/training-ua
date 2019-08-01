@@ -1,6 +1,6 @@
-package com.courses.task_pattern;
+package com.courses.task_pattern.factory_method;
 
-public class FactoryMethod {
+class FactoryMethod {
     public static void main(String[] args) {
         MessageMaker messageMaker = getMessageClassByName("video");
         Message message = messageMaker.createMessage();
