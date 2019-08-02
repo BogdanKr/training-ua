@@ -1,7 +1,6 @@
-package com.courses.task_oop_option24.model;
+package com.courses.task_oop_option24.model.entity;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public enum DBLetter {
     LETTER1(new TextLetter("Hi         ", "Mam  ", "Me   ", LocalDate.of(2019, 05, 22), Category.INCOME, "some message...")),

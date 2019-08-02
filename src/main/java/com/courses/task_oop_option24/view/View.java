@@ -1,6 +1,6 @@
 package com.courses.task_oop_option24.view;
 
-import com.courses.task_oop_option24.model.Letter;
+import com.courses.task_oop_option24.model.entity.Letter;
 
 import java.util.List;
 import java.util.Locale;

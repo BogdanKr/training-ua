@@ -1,8 +1,12 @@
 package com.courses.task_oop_option24.model;
 
+import com.courses.task_oop_option24.model.entity.Category;
+import com.courses.task_oop_option24.model.entity.Letter;
+import com.courses.task_oop_option24.model.entity.PostBox;
+import com.courses.task_oop_option24.model.entity.TextLetter;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 

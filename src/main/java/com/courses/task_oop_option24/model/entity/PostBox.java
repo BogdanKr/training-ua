@@ -1,4 +1,4 @@
-package com.courses.task_oop_option24.model;
+package com.courses.task_oop_option24.model.entity;
 
 import java.util.ArrayList;
 import java.util.List;

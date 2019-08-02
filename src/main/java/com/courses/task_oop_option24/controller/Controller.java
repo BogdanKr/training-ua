@@ -1,12 +1,10 @@
 package com.courses.task_oop_option24.controller;
 
-import com.courses.task_oop_option24.model.Category;
-import com.courses.task_oop_option24.model.Letter;
-import com.courses.task_oop_option24.model.PostBox;
+import com.courses.task_oop_option24.model.entity.Category;
+import com.courses.task_oop_option24.model.entity.Letter;
+import com.courses.task_oop_option24.model.entity.PostBox;
 import com.courses.task_oop_option24.model.Service;
 import com.courses.task_oop_option24.view.View;
-
-import java.util.Comparator;
 
 import static com.courses.task_oop_option24.view.TextConstant.*;
 
