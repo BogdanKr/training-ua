@@ -6,7 +6,9 @@ public class TextLetter extends Letter {
     String message;
 
 
-    public TextLetter(String title, String sender, String recipient, LocalDate sendDate, Category category, String message) {
+    public TextLetter(String title, String sender, String recipient,
+                      LocalDate sendDate, Category category, String message)
+    {
         super(title, sender, recipient, sendDate, category);
         this.message = message;
     }

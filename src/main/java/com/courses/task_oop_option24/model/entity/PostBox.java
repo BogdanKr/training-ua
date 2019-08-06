@@ -1,6 +1,7 @@
 package com.courses.task_oop_option24.model.entity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PostBox {
@@ -8,9 +9,8 @@ public class PostBox {
 
     {
         letterList = new ArrayList<>();
-        for (DBLetter letter : DBLetter.values()) {
-            letterList.add(letter.getLetter());
-        }
+        Arrays.stream(DBLetter.values())
+                .forEach(letter -> letterList.add(letter.getLetter()));
     }
 
     public List<Letter> getLetterList() {

@@ -21,40 +21,20 @@ public abstract class Letter {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getSender() {
         return sender;
-    }
-
-    public void setSender(String sender) {
-        this.sender = sender;
     }
 
     public String getRecipient() {
         return recipient;
     }
 
-    public void setRecipient(String recipient) {
-        this.recipient = recipient;
-    }
-
     public LocalDate getSendDate() {
         return sendDate;
     }
 
-    public void setSendDate(LocalDate sendDate) {
-        this.sendDate = sendDate;
-    }
-
     public Category getCategory() {
         return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     @Override
